@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'rubies#index'
+  root 'welcome#index'
   resources :csss
   resources :htmls
   resources :javascripts
