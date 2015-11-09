@@ -1,0 +1,8 @@
+<h1><%= @ruby.title %></h1>
+<div class="form-50">
+  <p><pre><%= @ruby.code %></pre></p>
+</div>
+
+<%= link_to "Edit code", edit_ruby_path(@ruby.id), class: "btn btn-primary" %>
+<%= link_to "Delete code", ruby_path(@ruby.id), method: :delete,
+                  class: "btn btn-danger", data: {confirm: "Are you sure?"} %>

@@ -1,0 +1,23 @@
+<h1>Submit a new Ruby Code Snippet!</h1>
+<%= form_for @ruby do |r| %>
+  <div class="form-group">
+    <%= r.label :title %>
+    <%= r.text_field :title, class:"form-25 form-control" %>
+  </div>
+  <div class="form-group">
+    <%= r.label :code %>
+    <%= r.text_area :code, class:"form-75 form-control" %>
+  </div>
+  <%= r.submit value:"Create Ruby Snippet", class:"btn btn-primary" %>
+<% end %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Code Snippet</th>
+<% @rubies.each do |ruby| %>
+  <tr>
+    <td><%= link_to "#{ruby.title}", ruby_path(ruby.id) %></td>
+    <td><%= ruby.code.truncate(20) %></td>
+  </tr>
+<% end %>
+</table>

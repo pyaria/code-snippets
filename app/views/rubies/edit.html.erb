@@ -1,0 +1,12 @@
+<h1> Edit <%= @ruby.title %></h1>
+<%= form_for @ruby do |r| %>
+  <div class="form-group">
+    <%= r.label :title %>
+    <%= r.text_field :title, class:"form-control form-25" %>
+  </div>
+  <div class="form-group">
+    <%= r.label :code %>
+    <%= r.text_area :code, class:"form-control form-25" %>
+  </div>
+  <%= r.submit value:"Update code" %>  
+<% end %>
