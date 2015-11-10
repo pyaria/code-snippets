@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109071002) do
+ActiveRecord::Schema.define(version: 20151110011559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 20151109071002) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "language"
+  end
+
   create_table "rubies", force: :cascade do |t|
     t.string   "title"
     t.text     "code"
@@ -44,4 +50,15 @@ ActiveRecord::Schema.define(version: 20151109071002) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "snippets", force: :cascade do |t|
+    t.string   "title"
+    t.text     "code"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "language_id"
+  end
+
+  add_index "snippets", ["language_id"], name: "index_snippets_on_language_id", using: :btree
+
+  add_foreign_key "snippets", "languages"
 end

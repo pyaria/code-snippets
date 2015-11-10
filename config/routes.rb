@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  resources :csss
-  resources :htmls
-  resources :javascripts
-  resources :rubies
+  root 'languages#index'
+  resources :languages do
+    resources :snippets
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

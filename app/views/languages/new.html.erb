@@ -1,0 +1,14 @@
+<h1>Add a new language!</h1>
+<hr>
+<div class="form-group form-inline">
+  <%= form_for @language do |l| %>
+    <div>
+      <%= l.label :language %>
+      <%= l.text_field :language, class:"form-control"%>
+    </div>
+    <hr>
+    <div>
+      <%= l.submit "Add new language", class:"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<h1><%= @language.language %> Code Snippets</h1>
+<table class="table table-stripe">
+  <tr>
+    <th>Title</th>
+    <th>Code</th>
+    <th>Actions</th>
+  </tr>
+  <% @snippets.each do |snippet| %>
+  <tr>
+    <td><%= link_to"#{snippet.title}", language_snippet_path(@language, snippet) %></td>
+    <td><%= snippet.code.truncate(20) %></td>
+    <td><%= link_to "Edit", edit_language_snippet_path(@language, snippet) %>
+        <%= link_to "Delete", language_snippet_path(@language, snippet),
+        {method: :delete, data: {confirm: "Are you sure?"}} %></td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "Add new", new_language_snippet_path(@language) %>

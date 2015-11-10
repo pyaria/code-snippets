@@ -1,2 +1,0 @@
-class HtmlsController < ApplicationController
-end

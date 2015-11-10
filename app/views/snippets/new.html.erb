@@ -1,0 +1,18 @@
+<h1>Create a new code snippet</h1>
+<hr>
+<div class="form-group form-75">
+  <%= form_for [@language, @snippet] do |s| %>
+  <div>
+    <%= s.label :title %>
+    <%= s.text_field :title, class:"form-control" %>
+  </div>
+  <div>
+    <%= s.label :code %>
+    <%= s.text_area :code, class:"form-control ten", rows: 10 %>
+  </div>
+  <hr>
+  <div>
+    <%= s.submit "Add new code", class:"btn btn-primary" %>
+  </div>
+  <% end %>
+</div>

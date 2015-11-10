@@ -1,0 +1,6 @@
+<h1>Code Snippets</h1>
+<hr>
+<% @languages.each do |language| %>
+  <%= link_to "#{language.language} (#{language.snippets.count} code snippets)", language_snippets_path(language) %>
+  <hr>
+<% end %>

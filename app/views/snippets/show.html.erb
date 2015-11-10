@@ -1,0 +1,9 @@
+<h1><%= @language.language %> Code Snippets</h1>
+<hr>
+<div>
+  <h4><%= @snippet.title %></h4>
+  <p><pre><%= @snippet.code %></pre></p>
+</div>
+<%= link_to "Edit", edit_language_snippet_path(@language, @snippet) %>
+<%= link_to "Delete", language_snippet_path(@language, @snippet),
+    {method: :delete, data: {confirm: "Are you sure?"}} %>
